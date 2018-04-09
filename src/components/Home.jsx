@@ -26,6 +26,9 @@ class Home extends Component {
   deletePassword = (key) => {
     this.props.deletePassword(key)
   }
+  handleEdit(id) {
+    this.props.history.push(`/password-manager/edit/${id}`)
+  }
   render() {
     let stateData = this.props.password
     let filterPwd = stateData.data.filter(
@@ -63,7 +66,9 @@ class Home extends Component {
               </tr>
             </thead>
             <tbody>
-            {filterPwd.map(pass=>{
+            {filterPwd.length===0 ? 
+            <tr><td colSpan="6">No data</td></tr>
+            : filterPwd.map(pass=>{
               return <tr key={pass.key}>
                         <td>{pass.url}</td>
                         <td>{pass.username}</td>
@@ -74,7 +79,8 @@ class Home extends Component {
                         <td>{pass.createdAt}</td>
                         <td>{pass.updatedAt}</td>
                         <td>
-                        <Link to={`/password-manager/update/${pass.key}`}><button className="btn btn-outline-success"><i className="fas fa-edit"></i></button></Link>
+                          <Link to={`/password-manager/edit/${pass.key}`}><button className="btn btn-outline-success"><i className="fas fa-edit"></i></button></Link>
+                          {/* <button className="btn btn-outline-success" onClick={() => this.handleEdit(pass.key)}><i className="fas fa-edit"></i></button> */}
                           <button type="button" className="btn btn-outline-danger" onClick={()=>this.deletePassword(pass.key)}><i className="fas fa-trash-alt"></i></button>
                         </td>
                       </tr>

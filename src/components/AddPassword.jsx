@@ -11,7 +11,7 @@ class AddNewpassword extends Component {
       url:'',
       username: '',
       password: '',
-      createdAt: moment().format('LLLL'),
+      createdAt: moment().format('LL'),
     }
   }
   addPassword = (payload) => {

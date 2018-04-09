@@ -17,8 +17,8 @@ class App extends Component {
         </header>
         <Switch>
           <Route exact path="/" component={AddPassword}/>
-          <Route path="/password-manager" component={Home}/>
-          <Route path="/password-manager/update/:key" component={EditPassword}/>
+          <Route exact path="/password-manager" component={Home}/>
+          <Route exact path="/password-manager/edit/:key" component={EditPassword}/>
           <Route component={NotFound}/>
         </Switch>
       </div>

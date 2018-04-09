@@ -1,6 +1,7 @@
 import {Password} from '../../firebase'
 import {FETCH_PASSWORD, LOADING_PASSWORD, ERROR_PASSWORD} from './password.actionType'
 import swal from 'sweetalert';
+import moment from 'moment'
 
 export const addPassword = (payload) => {
   return dispatch => {
@@ -9,7 +10,10 @@ export const addPassword = (payload) => {
 }
 export const editPassword = (key, payload) => {
   return dispatch => {
-    Password.push(payload)
+    Password.child(key).set({
+      ...payload,
+      updatedAt: moment().format('LL'),      
+    })
   }
 }
 export const getPassword = (payload) => {
