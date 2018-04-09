@@ -26,6 +26,16 @@
   background-color: #f2f2f2;
   padding: 20px;
 }
+.form{
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px 50px 20px 50px;
+  border: 1px solid grey
+}
+.validator {
+  border: 1px solid gainsboro;
+  background-color: azure;
+}
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }

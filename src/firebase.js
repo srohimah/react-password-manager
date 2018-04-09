@@ -10,3 +10,4 @@ const app = initializeApp({
 });
 export const db = app.database()
 export const Password = db.ref('Password')
+export const User = db.ref('User')

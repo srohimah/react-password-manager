@@ -26,9 +26,6 @@ class Home extends Component {
   deletePassword = (key) => {
     this.props.deletePassword(key)
   }
-  handleEdit(id) {
-    this.props.history.push(`/password-manager/edit/${id}`)
-  }
   render() {
     let stateData = this.props.password
     let filterPwd = stateData.data.filter(
@@ -45,7 +42,7 @@ class Home extends Component {
         <div className="container" style={{marginTop: 20 + 'px'}} >
           <div className="form-group row">
             <div className="col-2">
-              <Link to="/" ><button className="btn btn-primary">Add New Password</button></Link>
+              <Link to="/password-manager/add" ><button className="btn btn-primary">Add New Password</button></Link>
             </div>
             <div className="col-md-6 offset-md-4">
               <input className="form-control" type="text"
@@ -80,7 +77,6 @@ class Home extends Component {
                         <td>{pass.updatedAt}</td>
                         <td>
                           <Link to={`/password-manager/edit/${pass.key}`}><button className="btn btn-outline-success"><i className="fas fa-edit"></i></button></Link>
-                          {/* <button className="btn btn-outline-success" onClick={() => this.handleEdit(pass.key)}><i className="fas fa-edit"></i></button> */}
                           <button type="button" className="btn btn-outline-danger" onClick={()=>this.deletePassword(pass.key)}><i className="fas fa-trash-alt"></i></button>
                         </td>
                       </tr>
