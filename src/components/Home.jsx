@@ -76,8 +76,8 @@ class Home extends Component {
                         <td>{pass.createdAt}</td>
                         <td>{pass.updatedAt}</td>
                         <td>
-                          <Link to={`/password-manager/edit/${pass.key}`}><button className="btn btn-outline-success"><i className="fas fa-edit"></i></button></Link>
-                          <button type="button" className="btn btn-outline-danger" onClick={()=>this.deletePassword(pass.key)}><i className="fas fa-trash-alt"></i></button>
+                          <Link to={`/password-manager/edit/${pass.key}`}><button className="btn btn-outline-success"><i className="fa fa-edit"></i></button></Link>
+                          <button type="button" className="btn btn-outline-danger" onClick={()=>this.deletePassword(pass.key)}><i className="fa fa-trash"></i></button>
                         </td>
                       </tr>
             })}

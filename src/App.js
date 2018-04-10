@@ -7,6 +7,7 @@ import EditPassword from './components/EditPassword'
 import Login from './components/Login'
 import NotFound from './components/NotFound'
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
+import Signup from './components/Signup';
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
         </header>
         <Switch>
           <Route exact path="/" component={Login}/>
+          <Route exact path="/signup" component={Signup}/>
           <Route exact path="/password-manager" component={Home}/>
           <Route exact path="/password-manager/add" component={AddPassword}/>
           <Route exact path="/password-manager/edit/:key" component={EditPassword}/>
